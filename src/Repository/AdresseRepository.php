@@ -42,10 +42,10 @@ class AdresseRepository extends ServiceEntityRepository
 //    /**
 //     * @return Adresse[] Returns an array of Adresse objects
 //     */
-//    public function findByExampleField($value): array
+//    public function findByPersonne($value): array
 //    {
 //        return $this->createQueryBuilder('a')
-//            ->andWhere('a.exampleField = :val')
+//            ->andWhere('a.adresse_id = :val')
 //            ->setParameter('val', $value)
 //            ->orderBy('a.id', 'ASC')
 //            ->setMaxResults(10)

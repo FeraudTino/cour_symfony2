@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Sport;
 use App\Entity\Personne;
 use App\Form\PersonneType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -49,8 +50,10 @@ class PersonneController extends AbstractController
     function list(EntityManagerInterface $em)
     {
         $personnes = $em->getRepository(Personne::class)->findAll();
+        
+
         return $this->render('personne/show.html.twig', [
-            'controller_name' => 'PersonneController',
+            'controller_name' => 'Liste des Personnes',
             'personnes' => $personnes,
         ]);
     }

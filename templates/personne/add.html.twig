@@ -1,5 +1,8 @@
 {% extends 'base.html.twig' %}
-
+{% block javascripts %}
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="{{ asset('js/script.js') }}"></script>
+{% endblock %}
 {% block title %}Hello PersonneController!
 {% endblock %}
 
@@ -33,6 +36,7 @@
 				{{ form_widget(form.nom) }}
 			</div>
 		</div>
+
 		<div>
 			{{ form_label(form.prenom, "Prénom de la personne") }}
 			{{ form_errors(form.prenom) }}
@@ -40,9 +44,10 @@
 				{{ form_widget(form.prenom) }}
 			</div>
 		</div>
-		<div>
-			
-		</div>
+				{# {{ form_label(form.sports, "Selection du sport") }}
+		<ul class="sports" data-prototype="{{ form_widget(form.sports.vars.prototype)|e('html_attr') }}"></ul> #}
 		{{ form_end(form) }}
 	</div>
+	<div>Pour ajouter un sport</div>
+	<a href='{{ path("app_sport_new") }}'>cliquez-ici</a>
 {% endblock %}

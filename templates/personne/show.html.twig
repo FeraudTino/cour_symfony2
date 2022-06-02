@@ -1,13 +1,29 @@
 {% extends 'base.html.twig' %}
 {% block title %}Hello PersonneController!
 {% endblock %}
+{% block javascripts %}
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="{{ asset('js/script.js') }}"></script>
+{% endblock %}
 {% block body %}
 	<h1>Hello
 		{{ controller_name }}!</h1>
 	<ul>
 		{% for personne in personnes %}
-			<li>{{ personne.prenom }}
-				{{ personne.nom }}</li>
+			<li>
+				{{ personne.prenom }}
+				{{ personne.nom }} /
+                {% if personne.adresse %}
+					{{ personne.adresse.rue }}
+					{{ personne.adresse.codePostal }}
+					{{ personne.adresse.ville }} /
+				{% endif %}
+                {% if personne.sports %}
+                    {% for sport in personne.sports %}
+                        {{ sport.name }} /
+                    {% endfor %}
+                {% endif %}
+			</li>
 		{% endfor %}
 	</ul>
 {% endblock %}
