@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block title %}Hello PersonneController!
+{% endblock %}
+{% block body %}
+	<h1>Hello
+		{{ controller_name }}!</h1>
+	<ul>
+		{% for personne in personnes %}
+			<li>{{ personne.prenom }}
+				{{ personne.nom }}</li>
+		{% endfor %}
+	</ul>
+{% endblock %}
