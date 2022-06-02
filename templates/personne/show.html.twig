@@ -12,17 +12,20 @@
 		{% for personne in personnes %}
 			<li>
 				{{ personne.prenom }}
-				{{ personne.nom }} /
-                {% if personne.adresse %}
+				{{ personne.nom }}
+				{% if personne.adresse %}
+					/
 					{{ personne.adresse.rue }}
 					{{ personne.adresse.codePostal }}
-					{{ personne.adresse.ville }} /
+					{{ personne.adresse.ville }}
+
 				{% endif %}
-                {% if personne.sports %}
-                    {% for sport in personne.sports %}
-                        {{ sport.name }} /
-                    {% endfor %}
-                {% endif %}
+				{% if personne.sports %}
+					{% for sport in personne.sports %}
+						/
+						{{ sport.name }}
+					{% endfor %}
+				{% endif %}
 			</li>
 		{% endfor %}
 	</ul>

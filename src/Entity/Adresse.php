@@ -2,8 +2,9 @@
 
 namespace App\Entity;
 
-use App\Repository\AdresseRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\AdresseRepository;
+use OnlyCharacterAndSpace;
 
 #[ORM\Entity(repositoryClass: AdresseRepository::class)]
 class Adresse
@@ -13,12 +14,15 @@ class Adresse
     #[ORM\Column(type: 'integer')]
     private $id;
 
+    #[OnlyCharacterAndSpace]
     #[ORM\Column(type: 'string', length: 30, nullable: true)]
     private $rue;
 
+    #[OnlyCharacterAndSpace]
     #[ORM\Column(type: 'string', length: 5, nullable: true)]
     private $codePostal;
 
+    #[OnlyCharacterAndSpace]
     #[ORM\Column(type: 'string', length: 30, nullable: true)]
     private $ville;
 
