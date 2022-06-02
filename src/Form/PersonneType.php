@@ -16,6 +16,7 @@ class PersonneType extends AbstractType
         $builder
         ->add('nom', TextType::class, array('required' => true))
         ->add('prenom', TextType::class)
+        ->add('Adresse', AdresseType::class)
         ->add('save', SubmitType::class, ['label' => 'Ajouter une personne'])
         ;
     }
