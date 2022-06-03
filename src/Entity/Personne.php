@@ -31,6 +31,7 @@ class Personne
     #[ORM\Column(type: 'string', length: 30, nullable: true)]
     private $prenom;
 
+    #[Assert\Valid]
     #[ORM\OneToOne(targetEntity: Adresse::class, cascade: ['persist', 'remove'])]
     private $adresse;
 

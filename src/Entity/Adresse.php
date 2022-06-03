@@ -14,11 +14,9 @@ class Adresse
     #[ORM\Column(type: 'integer')]
     private $id;
 
-    #[OnlyCharacterAndSpace]
     #[ORM\Column(type: 'string', length: 30, nullable: true)]
     private $rue;
 
-    #[OnlyCharacterAndSpace]
     #[ORM\Column(type: 'string', length: 5, nullable: true)]
     private $codePostal;
 
