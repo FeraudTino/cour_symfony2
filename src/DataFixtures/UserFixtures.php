@@ -19,6 +19,8 @@ class UserFixtures extends Fixture
         $user = new User();
         $user->setEmail('wick@wick.us');
         $user->setRoles(['ROLE_ADMIN']);
+        $user->setNom('Wick');
+        $user->setPrenom('Wick');
         $user->setPassword($this->passwordEncoder->hashPassword(
             $user,
             'wick'
@@ -26,6 +28,8 @@ class UserFixtures extends Fixture
         $manager->persist($user);
         $user2 = new User();
         $user2->setEmail('john@john.us');
+        $user2->setNom('John');
+        $user2->setPrenom('John');
         $user2->setPassword($this->passwordEncoder->hashPassword(
             $user2,
             'john'

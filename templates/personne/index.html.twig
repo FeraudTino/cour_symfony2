@@ -9,12 +9,17 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>Hello {{user.prenom}}  {{user.prenom}}! ✅</h1>
 
     This friendly message is coming from:
     <ul>
         <li>Your controller at <code><a href="{{ 'C:/Users/feraud3340/Documents/cour_symfony2/src/Controller/PersonneController.php'|file_link(0) }}">src/Controller/PersonneController.php</a></code></li>
         <li>Your template at <code><a href="{{ 'C:/Users/feraud3340/Documents/cour_symfony2/templates/personne/index.html.twig'|file_link(0) }}">templates/personne/index.html.twig</a></code></li>
     </ul>
+    {% if is_granted('ROLE_ADMIN') %}
+			<a href="{{ url('personne_add') }}">
+				Ajouter une personne
+			</a>
+		{% endif %}
 </div>
 {% endblock %}

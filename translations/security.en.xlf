@@ -4,11 +4,11 @@
 <body>
 <trans-unit id="Invalid credentials.">
 <source>Invalid credentials.</source>
-<target>Le mot de passe est invalide</target>
+<target>Identifiant ou mot de passe incorrect</target>
 </trans-unit>
 <trans-unit id="Email could not be found.">
 <source>Email could not be found.</source>
-<target>Email non-trouv´e</target>
+<target>Email non-trouvé</target>
 </trans-unit>
 </body>
 </file>
